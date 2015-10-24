@@ -13,7 +13,7 @@
 
 @optional
 -(void)recipesLoadedSuccess;
-
+-(void)recipeGetSuccess;
 @end
 
 
@@ -22,8 +22,11 @@
 @property (nonatomic, strong) NSMutableArray *arrayOfRecipes;
 @property (nonatomic, weak) id<PDAppManagerDelegate> delegate;
 @property (nonatomic, strong) NSString *sortedMode;
-@property  NSInteger page;
+@property (nonatomic, strong) PDRecipe *selectedRecipe;
+@property NSInteger indexOfSelectedObject;
+@property NSInteger page;
 
 + (instancetype)sharedAppManager;
 - (void)getAllRecipes;
+- (void)getRecipeAtIndex: (NSInteger)index ;
 @end

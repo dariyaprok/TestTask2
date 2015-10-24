@@ -7,13 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface PDRecipe : NSObject
 
+@property (strong, nonatomic) NSString *recipeId;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *publisher;
-@property (strong, nonatomic) NSString *ingredients;
+@property (strong, nonatomic) NSArray *ingredients;
 @property (strong, nonatomic) NSString *imageUrl;
 @property (strong, nonatomic) NSString *recipeUrl;
-@property (strong, nonatomic) NSString *socialRank;
+@property (strong, nonatomic) UIImage *recipeImage;
+
 @end

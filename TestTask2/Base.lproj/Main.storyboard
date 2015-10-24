@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8ro-4n-TkX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Table View Controller-->
@@ -24,28 +26,48 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="gMt-kS-SaL"/>
                                 </connections>
                             </tableView>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0mU-tK-d6S">
+                                <rect key="frame" x="240" y="280" width="120" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dyL-ZY-fsi"/>
+                                    <constraint firstAttribute="width" constant="120" id="mPY-MJ-69L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="eZG-Iu-ONO"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pKg-ka-L4Z" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="N1X-RN-Zx2"/>
+                            <constraint firstItem="pKg-ka-L4Z" firstAttribute="centerX" secondItem="0mU-tK-d6S" secondAttribute="centerX" id="P1f-EE-l3c"/>
+                            <constraint firstItem="pKg-ka-L4Z" firstAttribute="centerY" secondItem="0mU-tK-d6S" secondAttribute="centerY" id="UiA-Zf-uTY"/>
                             <constraint firstItem="pKg-ka-L4Z" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" id="YgC-6D-aZy"/>
                             <constraint firstAttribute="centerX" secondItem="pKg-ka-L4Z" secondAttribute="centerX" id="egX-Iy-8ed"/>
                             <constraint firstAttribute="centerY" secondItem="pKg-ka-L4Z" secondAttribute="centerY" id="m68-6o-JXB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="uvV-gQ-yzC"/>
+                    <navigationItem key="navigationItem" id="uvV-gQ-yzC">
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="P5y-LY-zhn"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="recipeTableView" destination="pKg-ka-L4Z" id="LZj-Jx-ax2"/>
+                        <outlet property="searchBarButton" destination="P5y-LY-zhn" id="jbI-PE-cuR"/>
+                        <outlet property="searchTextField" destination="0mU-tK-d6S" id="9qK-Lm-Rth"/>
+                        <segue destination="LMT-uL-eJx" kind="show" identifier="PDPushRecipeInformationViewControllerSegue" id="LI0-f6-DOQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="555" y="272"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Information View Controller-->
         <scene sceneID="lKg-Fl-5ek">
             <objects>
-                <viewController id="LMT-uL-eJx" sceneMemberID="viewController">
+                <viewController id="LMT-uL-eJx" customClass="PDRecipeInformationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SRU-72-4aW"/>
                         <viewControllerLayoutGuide type="bottom" id="Pqb-z8-Ter"/>
@@ -53,8 +75,53 @@
                     <view key="view" contentMode="scaleToFill" id="NxS-X9-wui">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QUy-vq-CZY">
+                                <rect key="frame" x="190" y="72" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="WrO-bC-lIN"/>
+                                    <constraint firstAttribute="width" secondItem="QUy-vq-CZY" secondAttribute="height" multiplier="1:1" id="vCl-Bu-FJm"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eUb-hX-4qo">
+                                <rect key="frame" x="16" y="280" width="568" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PDTableViewIngredientsCellIdentifier" textLabel="kg4-Zh-bMg" style="IBUITableViewCellStyleDefault" id="oXh-Tf-O6s">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oXh-Tf-O6s" id="edF-Qk-44D">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kg4-Zh-bMg">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LMT-uL-eJx" id="3IV-3u-q99"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="QUy-vq-CZY" secondAttribute="centerX" constant="10" id="0vp-qk-7hx"/>
+                            <constraint firstItem="QUy-vq-CZY" firstAttribute="top" secondItem="SRU-72-4aW" secondAttribute="bottom" constant="8" symbolic="YES" id="4TU-h2-V1w"/>
+                            <constraint firstAttribute="bottom" secondItem="eUb-hX-4qo" secondAttribute="bottom" constant="20" symbolic="YES" id="5Pv-4R-cAx"/>
+                            <constraint firstItem="eUb-hX-4qo" firstAttribute="trailing" secondItem="NxS-X9-wui" secondAttribute="trailingMargin" id="5xk-c3-Rkx"/>
+                            <constraint firstItem="eUb-hX-4qo" firstAttribute="top" secondItem="QUy-vq-CZY" secondAttribute="bottom" constant="8" symbolic="YES" id="gkg-eo-I8r"/>
+                            <constraint firstItem="eUb-hX-4qo" firstAttribute="leading" secondItem="NxS-X9-wui" secondAttribute="leadingMargin" id="qIm-Ts-ewU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ingredientsTableView" destination="eUb-hX-4qo" id="W6O-2S-4Dd"/>
+                        <outlet property="recipeImageView" destination="QUy-vq-CZY" id="qkp-ey-3PW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HSl-ug-Wmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

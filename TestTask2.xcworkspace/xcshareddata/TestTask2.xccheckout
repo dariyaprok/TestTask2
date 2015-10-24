@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4BC01D9C-4A52-46E1-9894-144AA834444C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TestTask2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D84485570E676D70EA758C56BB21779291D7996F</key>
+		<string>https://github.com/dariyaprok/TestTask2.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TestTask2.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D84485570E676D70EA758C56BB21779291D7996F</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dariyaprok/TestTask2.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D84485570E676D70EA758C56BB21779291D7996F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D84485570E676D70EA758C56BB21779291D7996F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>teamvoy1</string>
+		</dict>
+	</array>
+</dict>
+</plist>

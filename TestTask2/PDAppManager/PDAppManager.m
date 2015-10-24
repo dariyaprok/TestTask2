@@ -43,6 +43,9 @@ static NSString const *APIGetMethod = @"http://food2fork.com/api/get";
 }
 
 - (void)getAllRecipes {
+    if(self.page == 1 && self.arrayOfRecipes){
+        [self.arrayOfRecipes removeAllObjects];
+    }
     if(!self.arrayOfRecipes){
         self.arrayOfRecipes = [[NSMutableArray alloc] init];
     }
@@ -51,6 +54,7 @@ static NSString const *APIGetMethod = @"http://food2fork.com/api/get";
         NSInteger am =(NSInteger)[responseObject objectForKey:@"count"];
         for(id obj in [responseObject objectForKey:@"recipes"]) {
             PDRecipe *newRecipe = [PDRecipe new];
+            newRecipe.recipeId = [obj objectForKey:@"recipe_id"];
             newRecipe.imageUrl = [obj objectForKey:@"image_url"];
             newRecipe.publisher = [obj objectForKey:@"publisher"];
             newRecipe.title = [obj objectForKey:@"title"];
@@ -62,5 +66,22 @@ static NSString const *APIGetMethod = @"http://food2fork.com/api/get";
         NSLog(@"%@", error);
     }];
     
+}
+
+- (void)getRecipeAtIndex: (NSInteger)index {
+    self.selectedRecipe = self.arrayOfRecipes[index];
+    if(!self.selectedRecipe.ingredients){
+    NSDictionary *parameters = @{@"key":APIKey, @"rId":self.selectedRecipe.recipeId};
+    [self.operationManager GET:APIGetMethod parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        self.selectedRecipe.ingredients = [NSArray arrayWithArray:[[responseObject objectForKey:@"recipe"] objectForKey: @"ingredients"]];
+        [self.delegate recipeGetSuccess];
+        NSLog(@"%@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+    }];
+    }
+    else {
+        [self.delegate recipeGetSuccess];
+    }
 }
 @end

@@ -10,4 +10,11 @@
 
 @implementation PDCustomTableViewCell
 
+
+-(void)awakeFromNib {
+    [super awakeFromNib];
+    
+    self.recipeImageView.layer.cornerRadius = self.recipeImageView.frame.size.width/2;
+    self.recipeImageView.layer.masksToBounds = YES;
+}
 @end

@@ -18,6 +18,7 @@
 		843CDFED1BDB9E27004E9AF4 /* PDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDFEC1BDB9E27004E9AF4 /* PDTableViewController.m */; };
 		843CDFF11BDBB60A004E9AF4 /* PDAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDFF01BDBB60A004E9AF4 /* PDAppManager.m */; };
 		843CDFF51BDBB961004E9AF4 /* PDRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDFF41BDBB961004E9AF4 /* PDRecipe.m */; };
+		84E664CC1BDBFCB70021E367 /* PDRecipeInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E664CB1BDBFCB70021E367 /* PDRecipeInformationViewController.m */; };
 		FF6908833BAAEBB2C38427EA /* libPods-TestTask2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF4AA0797AC798238050083 /* libPods-TestTask2.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,8 @@
 		843CDFF01BDBB60A004E9AF4 /* PDAppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDAppManager.m; path = PDAppManager/PDAppManager.m; sourceTree = "<group>"; };
 		843CDFF31BDBB961004E9AF4 /* PDRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDRecipe.h; path = PDRecipe/PDRecipe.h; sourceTree = "<group>"; };
 		843CDFF41BDBB961004E9AF4 /* PDRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDRecipe.m; path = PDRecipe/PDRecipe.m; sourceTree = "<group>"; };
+		84E664CA1BDBFCB70021E367 /* PDRecipeInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDRecipeInformationViewController.h; path = PDRecipeInformationViewController/PDRecipeInformationViewController.h; sourceTree = "<group>"; };
+		84E664CB1BDBFCB70021E367 /* PDRecipeInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDRecipeInformationViewController.m; path = PDRecipeInformationViewController/PDRecipeInformationViewController.m; sourceTree = "<group>"; };
 		9545510A82F407DAA9946953 /* Pods-TestTask2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTask2.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestTask2/Pods-TestTask2.release.xcconfig"; sourceTree = "<group>"; };
 		FE5671E8D35EC299A0A2E957 /* Pods-TestTask2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTask2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestTask2/Pods-TestTask2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +114,7 @@
 				843CDFC41BDB86A2004E9AF4 /* AppDelegate.m */,
 				843CDFF61BDBB967004E9AF4 /* PDRecipe */,
 				843CDFF21BDBB60F004E9AF4 /* PDAppManager */,
+				84E664C91BDBFC6A0021E367 /* PDRecipeInformationViewController */,
 				843CDFEE1BDB9E2E004E9AF4 /* PDTableViewController */,
 				843CDFC91BDB86A2004E9AF4 /* Main.storyboard */,
 				843CDFCC1BDB86A2004E9AF4 /* Images.xcassets */,
@@ -182,6 +186,15 @@
 				843CDFF41BDBB961004E9AF4 /* PDRecipe.m */,
 			);
 			name = PDRecipe;
+			sourceTree = "<group>";
+		};
+		84E664C91BDBFC6A0021E367 /* PDRecipeInformationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84E664CA1BDBFCB70021E367 /* PDRecipeInformationViewController.h */,
+				84E664CB1BDBFCB70021E367 /* PDRecipeInformationViewController.m */,
+			);
+			name = PDRecipeInformationViewController;
 			sourceTree = "<group>";
 		};
 		AF961B714AEA8E03B8F34FEA /* Pods */ = {
@@ -331,6 +344,7 @@
 			files = (
 				843CDFE71BDB9480004E9AF4 /* PDCustomTableViewCell.m in Sources */,
 				843CDFED1BDB9E27004E9AF4 /* PDTableViewController.m in Sources */,
+				84E664CC1BDBFCB70021E367 /* PDRecipeInformationViewController.m in Sources */,
 				843CDFC51BDB86A2004E9AF4 /* AppDelegate.m in Sources */,
 				843CDFF51BDBB961004E9AF4 /* PDRecipe.m in Sources */,
 				843CDFC21BDB86A2004E9AF4 /* main.m in Sources */,
