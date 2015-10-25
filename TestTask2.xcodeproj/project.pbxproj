@@ -12,7 +12,6 @@
 		843CDFCB1BDB86A2004E9AF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843CDFC91BDB86A2004E9AF4 /* Main.storyboard */; };
 		843CDFCD1BDB86A2004E9AF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843CDFCC1BDB86A2004E9AF4 /* Images.xcassets */; };
 		843CDFD01BDB86A2004E9AF4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843CDFCE1BDB86A2004E9AF4 /* LaunchScreen.xib */; };
-		843CDFDC1BDB86A2004E9AF4 /* TestTask2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDFDB1BDB86A2004E9AF4 /* TestTask2Tests.m */; };
 		843CDFED1BDB9E27004E9AF4 /* PDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDFEC1BDB9E27004E9AF4 /* PDTableViewController.m */; };
 		843CDFF11BDBB60A004E9AF4 /* PDAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDFF01BDBB60A004E9AF4 /* PDAppManager.m */; };
 		843CDFF51BDBB961004E9AF4 /* PDRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDFF41BDBB961004E9AF4 /* PDRecipe.m */; };
@@ -21,16 +20,6 @@
 		84E664D11BDCE0180021E367 /* PDCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E664CF1BDCE0180021E367 /* PDCustomTableViewCell.xib */; };
 		FF6908833BAAEBB2C38427EA /* libPods-TestTask2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF4AA0797AC798238050083 /* libPods-TestTask2.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		843CDFD61BDB86A2004E9AF4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 843CDFB41BDB86A1004E9AF4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 843CDFBB1BDB86A1004E9AF4;
-			remoteInfo = TestTask2;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0CF4AA0797AC798238050083 /* libPods-TestTask2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestTask2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,7 +31,6 @@
 		843CDFCA1BDB86A2004E9AF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		843CDFCC1BDB86A2004E9AF4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		843CDFCF1BDB86A2004E9AF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		843CDFD51BDB86A2004E9AF4 /* TestTask2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTask2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		843CDFDA1BDB86A2004E9AF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843CDFDB1BDB86A2004E9AF4 /* TestTask2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTask2Tests.m; sourceTree = "<group>"; };
 		843CDFEB1BDB9E27004E9AF4 /* PDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTableViewController.h; path = PDTableViewController/PDTableViewController.h; sourceTree = "<group>"; };
@@ -66,13 +54,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF6908833BAAEBB2C38427EA /* libPods-TestTask2.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		843CDFD21BDB86A2004E9AF4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				843CDFBC1BDB86A1004E9AF4 /* TestTask2.app */,
-				843CDFD51BDB86A2004E9AF4 /* TestTask2Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -228,24 +208,6 @@
 			productReference = 843CDFBC1BDB86A1004E9AF4 /* TestTask2.app */;
 			productType = "com.apple.product-type.application";
 		};
-		843CDFD41BDB86A2004E9AF4 /* TestTask2Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 843CDFE21BDB86A2004E9AF4 /* Build configuration list for PBXNativeTarget "TestTask2Tests" */;
-			buildPhases = (
-				843CDFD11BDB86A2004E9AF4 /* Sources */,
-				843CDFD21BDB86A2004E9AF4 /* Frameworks */,
-				843CDFD31BDB86A2004E9AF4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				843CDFD71BDB86A2004E9AF4 /* PBXTargetDependency */,
-			);
-			name = TestTask2Tests;
-			productName = TestTask2Tests;
-			productReference = 843CDFD51BDB86A2004E9AF4 /* TestTask2Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -257,10 +219,6 @@
 				TargetAttributes = {
 					843CDFBB1BDB86A1004E9AF4 = {
 						CreatedOnToolsVersion = 6.3.2;
-					};
-					843CDFD41BDB86A2004E9AF4 = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = 843CDFBB1BDB86A1004E9AF4;
 					};
 				};
 			};
@@ -278,7 +236,6 @@
 			projectRoot = "";
 			targets = (
 				843CDFBB1BDB86A1004E9AF4 /* TestTask2 */,
-				843CDFD41BDB86A2004E9AF4 /* TestTask2Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -292,13 +249,6 @@
 				843CDFCB1BDB86A2004E9AF4 /* Main.storyboard in Resources */,
 				843CDFD01BDB86A2004E9AF4 /* LaunchScreen.xib in Resources */,
 				843CDFCD1BDB86A2004E9AF4 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		843CDFD31BDB86A2004E9AF4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,23 +302,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		843CDFD11BDB86A2004E9AF4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				843CDFDC1BDB86A2004E9AF4 /* TestTask2Tests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		843CDFD71BDB86A2004E9AF4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 843CDFBB1BDB86A1004E9AF4 /* TestTask2 */;
-			targetProxy = 843CDFD61BDB86A2004E9AF4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		843CDFC91BDB86A2004E9AF4 /* Main.storyboard */ = {
@@ -407,6 +341,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -450,6 +385,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -475,6 +411,7 @@
 			baseConfigurationReference = FE5671E8D35EC299A0A2E957 /* Pods-TestTask2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TestTask2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,43 +423,10 @@
 			baseConfigurationReference = 9545510A82F407DAA9946953 /* Pods-TestTask2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TestTask2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		843CDFE31BDB86A2004E9AF4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TestTask2Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestTask2.app/TestTask2";
-			};
-			name = Debug;
-		};
-		843CDFE41BDB86A2004E9AF4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TestTask2Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestTask2.app/TestTask2";
 			};
 			name = Release;
 		};
@@ -543,15 +447,6 @@
 			buildConfigurations = (
 				843CDFE01BDB86A2004E9AF4 /* Debug */,
 				843CDFE11BDB86A2004E9AF4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		843CDFE21BDB86A2004E9AF4 /* Build configuration list for PBXNativeTarget "TestTask2Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				843CDFE31BDB86A2004E9AF4 /* Debug */,
-				843CDFE41BDB86A2004E9AF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

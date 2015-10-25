@@ -16,7 +16,6 @@
 @property (strong, nonatomic) NSString *publisher;
 @property (strong, nonatomic) NSArray *ingredients;
 @property (strong, nonatomic) NSString *imageUrl;
-@property (strong, nonatomic) NSString *recipeUrl;
-@property (strong, nonatomic) UIImage *recipeImage;
+
 
 @end

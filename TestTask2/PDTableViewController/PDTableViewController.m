@@ -9,6 +9,8 @@
 #import "PDTableViewController.h"
 #import "PDCustomTableViewCell.h"
 #import "PDRecipe.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
 @interface PDTableViewController()
 
@@ -47,7 +49,7 @@ const NSString static *pushRecipeInformationViewControllerSegue = @"PDPushRecipe
         NSArray* nibFileObjects = [[NSBundle mainBundle] loadNibNamed:customTableViewCell owner:self options:nil];
         cell = [nibFileObjects objectAtIndex:0];
     }
-    [cell.recipeImageView setImage:((PDRecipe*)self.appManger.arrayOfRecipes[indexPath.row]).recipeImage];
+    [cell.recipeImageView setImageWithURL:[[NSURL alloc] initWithString:((PDRecipe*)self.appManger.arrayOfRecipes[indexPath.row]).imageUrl] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     cell.recipeNameLabel.text = ((PDRecipe*)self.appManger.arrayOfRecipes[indexPath.row]).title;
     cell.publisherLabel.text = ((PDRecipe*)self.appManger.arrayOfRecipes[indexPath.row]).publisher;
     return cell;

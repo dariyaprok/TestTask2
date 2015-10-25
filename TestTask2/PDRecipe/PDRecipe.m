@@ -11,10 +11,4 @@
 @implementation PDRecipe
 
 
--(UIImage*)recipeImage{
-    if(!_recipeImage){
-        _recipeImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.imageUrl]]];
-    }
-    return _recipeImage;
-}
 @end

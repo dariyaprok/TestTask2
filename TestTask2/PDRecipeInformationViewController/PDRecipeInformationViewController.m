@@ -8,6 +8,8 @@
 
 #import "PDRecipeInformationViewController.h"
 #import "PDAppManager.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
 @interface PDRecipeInformationViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *recipeImageView;
@@ -26,7 +28,7 @@ static NSString const *tableViewIngredientsCellIdentifier = @"PDTableViewIngredi
     self.recipeImageView.layer.cornerRadius = self.recipeImageView.frame.size.width/2;
     self.recipeImageView.layer.masksToBounds = YES;
     self.appManager = [PDAppManager sharedAppManager];
-    self.recipeImageView.image = self.appManager.selectedRecipe.recipeImage;
+    [self.recipeImageView setImageWithURL:[[NSURL alloc] initWithString:self.appManager.selectedRecipe.imageUrl] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.navigationItem.title = self.appManager.selectedRecipe.title;
     self.ingredientsTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
 }
