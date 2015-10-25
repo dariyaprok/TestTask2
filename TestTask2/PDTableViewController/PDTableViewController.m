@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *searchBarButton;
 @property (weak, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sortedSegmantBarButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @property (strong, nonatomic) PDAppManager *appManger;
 @end
 
@@ -29,6 +32,9 @@ const NSString static *pushRecipeInformationViewControllerSegue = @"PDPushRecipe
     [super viewDidLoad];
     self.appManger =  [PDAppManager sharedAppManager];
     self.appManger.delegate = self;
+    [self.activityIndicator startAnimating];
+    self.activityIndicator.hidden = NO;
+    self.view.alpha = 0.5;
     [self.appManger getAllRecipes];
     self.searchTextField.delegate = self;
 }
@@ -77,11 +83,26 @@ const NSString static *pushRecipeInformationViewControllerSegue = @"PDPushRecipe
     [self performSegueWithIdentifier:pushRecipeInformationViewControllerSegue sender:self];
 }
 
+-(void)allRecipesLoadedSuccess{
+    if(self.appManger.isSearchMode == YES){
+        self.appManger.sortedMode = @"r";
+        self.sortedSegmantBarButton.selectedSegmentIndex = 1;
+    }
+    if(self.appManger.arrayOfRecipes.count == 0){
+        [self.recipeTableView reloadData];
+    }
+    [self.activityIndicator stopAnimating];
+    self.activityIndicator.hidden = YES;
+    self.view.alpha = 1.0;
+}
+
 #pragma mark - UITextFieldDelegate
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     self.appManger.page =1;
+    [self.activityIndicator startAnimating];
+    self.activityIndicator.hidden = NO;
+    self.view.alpha = 0.5;
     [self.appManger searchRecipesWithSerachKey:textField.text];
-    [self.view setAlpha:1.0];
     self.searchTextField.hidden = YES;
     return YES;
 }
@@ -89,17 +110,38 @@ const NSString static *pushRecipeInformationViewControllerSegue = @"PDPushRecipe
 #pragma mark - IBAction methods
 - (IBAction)searchBarButtonPressed:(id)sender {
     if(self.appManger.isSearchMode == NO){
+        self.sortedSegmantBarButton.hidden = YES;
         self.searchBarButton.title = @"Skip";
         self.searchTextField.hidden = NO;
         [self.view setAlpha:0.5];
     }
     else{
-        [self.view setAlpha:1.0];
+        //[self.view setAlpha:1.0];
+        self.sortedSegmantBarButton.hidden = NO;
         self.searchBarButton.title = @"Search";
         self.searchTextField.hidden = YES;
         self.appManger.page =1;
+        [self.activityIndicator startAnimating];
+        self.activityIndicator.hidden = NO;
+        self.view.alpha = 0.5;
         [self.appManger getAllRecipes];
     }
 }
+- (IBAction)sortBarButtonPressed:(UISegmentedControl*)sender {
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            self.appManger.sortedMode = @"t";
+            break;
+        case 1:
+            self.appManger.sortedMode = @"r";
+            break;
+    }
+    self.appManger.page = 1;
+    [self.activityIndicator startAnimating];
+    self.activityIndicator.hidden = NO;
+    self.view.alpha = 0.5;
+    [self.appManger getAllRecipes];
+}
+
 
 @end

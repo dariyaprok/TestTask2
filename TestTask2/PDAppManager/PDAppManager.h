@@ -14,7 +14,7 @@
 @optional
 -(void)recipesLoadedSuccess;
 -(void)recipeGetSuccess;
-
+-(void)allRecipesLoadedSuccess;
 @end
 
 

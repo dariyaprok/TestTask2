@@ -13,12 +13,12 @@
 		843CDFCD1BDB86A2004E9AF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843CDFCC1BDB86A2004E9AF4 /* Images.xcassets */; };
 		843CDFD01BDB86A2004E9AF4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843CDFCE1BDB86A2004E9AF4 /* LaunchScreen.xib */; };
 		843CDFDC1BDB86A2004E9AF4 /* TestTask2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDFDB1BDB86A2004E9AF4 /* TestTask2Tests.m */; };
-		843CDFE71BDB9480004E9AF4 /* PDCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDFE61BDB9480004E9AF4 /* PDCustomTableViewCell.m */; };
-		843CDFEA1BDB94BD004E9AF4 /* PDCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843CDFE91BDB94BD004E9AF4 /* PDCustomTableViewCell.xib */; };
 		843CDFED1BDB9E27004E9AF4 /* PDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDFEC1BDB9E27004E9AF4 /* PDTableViewController.m */; };
 		843CDFF11BDBB60A004E9AF4 /* PDAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDFF01BDBB60A004E9AF4 /* PDAppManager.m */; };
 		843CDFF51BDBB961004E9AF4 /* PDRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDFF41BDBB961004E9AF4 /* PDRecipe.m */; };
 		84E664CC1BDBFCB70021E367 /* PDRecipeInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E664CB1BDBFCB70021E367 /* PDRecipeInformationViewController.m */; };
+		84E664D01BDCE0180021E367 /* PDCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E664CE1BDCE0180021E367 /* PDCustomTableViewCell.m */; };
+		84E664D11BDCE0180021E367 /* PDCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E664CF1BDCE0180021E367 /* PDCustomTableViewCell.xib */; };
 		FF6908833BAAEBB2C38427EA /* libPods-TestTask2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF4AA0797AC798238050083 /* libPods-TestTask2.a */; };
 /* End PBXBuildFile section */
 
@@ -45,9 +45,6 @@
 		843CDFD51BDB86A2004E9AF4 /* TestTask2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTask2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		843CDFDA1BDB86A2004E9AF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843CDFDB1BDB86A2004E9AF4 /* TestTask2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTask2Tests.m; sourceTree = "<group>"; };
-		843CDFE51BDB9480004E9AF4 /* PDCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDCustomTableViewCell.h; path = PDCustomTableViewCell/PDCustomTableViewCell.h; sourceTree = "<group>"; };
-		843CDFE61BDB9480004E9AF4 /* PDCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDCustomTableViewCell.m; path = PDCustomTableViewCell/PDCustomTableViewCell.m; sourceTree = "<group>"; };
-		843CDFE91BDB94BD004E9AF4 /* PDCustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDCustomTableViewCell.xib; sourceTree = "<group>"; };
 		843CDFEB1BDB9E27004E9AF4 /* PDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTableViewController.h; path = PDTableViewController/PDTableViewController.h; sourceTree = "<group>"; };
 		843CDFEC1BDB9E27004E9AF4 /* PDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTableViewController.m; path = PDTableViewController/PDTableViewController.m; sourceTree = "<group>"; };
 		843CDFEF1BDBB60A004E9AF4 /* PDAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDAppManager.h; path = PDAppManager/PDAppManager.h; sourceTree = "<group>"; };
@@ -56,6 +53,9 @@
 		843CDFF41BDBB961004E9AF4 /* PDRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDRecipe.m; path = PDRecipe/PDRecipe.m; sourceTree = "<group>"; };
 		84E664CA1BDBFCB70021E367 /* PDRecipeInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDRecipeInformationViewController.h; path = PDRecipeInformationViewController/PDRecipeInformationViewController.h; sourceTree = "<group>"; };
 		84E664CB1BDBFCB70021E367 /* PDRecipeInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDRecipeInformationViewController.m; path = PDRecipeInformationViewController/PDRecipeInformationViewController.m; sourceTree = "<group>"; };
+		84E664CD1BDCE0180021E367 /* PDCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDCustomTableViewCell.h; path = PDTableViewController/PDCustomTableViewCell/PDCustomTableViewCell.h; sourceTree = "<group>"; };
+		84E664CE1BDCE0180021E367 /* PDCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDCustomTableViewCell.m; path = PDTableViewController/PDCustomTableViewCell/PDCustomTableViewCell.m; sourceTree = "<group>"; };
+		84E664CF1BDCE0180021E367 /* PDCustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PDCustomTableViewCell.xib; path = PDTableViewController/PDCustomTableViewCell/PDCustomTableViewCell.xib; sourceTree = "<group>"; };
 		9545510A82F407DAA9946953 /* Pods-TestTask2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTask2.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestTask2/Pods-TestTask2.release.xcconfig"; sourceTree = "<group>"; };
 		FE5671E8D35EC299A0A2E957 /* Pods-TestTask2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTask2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestTask2/Pods-TestTask2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,9 +153,9 @@
 		843CDFE81BDB9487004E9AF4 /* PDCustomTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				843CDFE51BDB9480004E9AF4 /* PDCustomTableViewCell.h */,
-				843CDFE61BDB9480004E9AF4 /* PDCustomTableViewCell.m */,
-				843CDFE91BDB94BD004E9AF4 /* PDCustomTableViewCell.xib */,
+				84E664CD1BDCE0180021E367 /* PDCustomTableViewCell.h */,
+				84E664CE1BDCE0180021E367 /* PDCustomTableViewCell.m */,
+				84E664CF1BDCE0180021E367 /* PDCustomTableViewCell.xib */,
 			);
 			name = PDCustomTableViewCell;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843CDFEA1BDB94BD004E9AF4 /* PDCustomTableViewCell.xib in Resources */,
+				84E664D11BDCE0180021E367 /* PDCustomTableViewCell.xib in Resources */,
 				843CDFCB1BDB86A2004E9AF4 /* Main.storyboard in Resources */,
 				843CDFD01BDB86A2004E9AF4 /* LaunchScreen.xib in Resources */,
 				843CDFCD1BDB86A2004E9AF4 /* Images.xcassets in Resources */,
@@ -342,13 +342,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843CDFE71BDB9480004E9AF4 /* PDCustomTableViewCell.m in Sources */,
 				843CDFED1BDB9E27004E9AF4 /* PDTableViewController.m in Sources */,
 				84E664CC1BDBFCB70021E367 /* PDRecipeInformationViewController.m in Sources */,
 				843CDFC51BDB86A2004E9AF4 /* AppDelegate.m in Sources */,
 				843CDFF51BDBB961004E9AF4 /* PDRecipe.m in Sources */,
 				843CDFC21BDB86A2004E9AF4 /* main.m in Sources */,
 				843CDFF11BDBB60A004E9AF4 /* PDAppManager.m in Sources */,
+				84E664D01BDCE0180021E367 /* PDCustomTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
