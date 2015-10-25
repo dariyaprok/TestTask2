@@ -38,11 +38,13 @@ static NSString const *APIGetMethod = @"http://food2fork.com/api/get";
         self.operationManager = [AFHTTPRequestOperationManager manager];
         self.page = 1;
         self.sortedMode = @"t";
+        self.isSearchMode = NO;
     }
     return self;
 }
 
 - (void)getAllRecipes {
+    self.isSearchMode = NO;
     if(self.page == 1 && self.arrayOfRecipes){
         [self.arrayOfRecipes removeAllObjects];
     }
@@ -82,6 +84,36 @@ static NSString const *APIGetMethod = @"http://food2fork.com/api/get";
     }
     else {
         [self.delegate recipeGetSuccess];
+    }
+}
+
+-(void)searchRecipesWithSerachKey:(NSString*)searchKey{
+    if(searchKey.length != 0){
+        self.isSearchMode = YES;
+        if(self.page == 1 && self.arrayOfRecipes){
+            [self.arrayOfRecipes removeAllObjects];
+            
+        }
+        NSDictionary *parameters = @{@"key":APIKey, @"q":searchKey, @"page":[NSNumber numberWithInt:self.page]};
+        [self.operationManager GET:APISearchMethod parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSInteger am =(NSInteger)[responseObject objectForKey:@"count"];
+            for(id obj in [responseObject objectForKey:@"recipes"]) {
+                PDRecipe *newRecipe = [PDRecipe new];
+                newRecipe.recipeId = [obj objectForKey:@"recipe_id"];
+                newRecipe.imageUrl = [obj objectForKey:@"image_url"];
+                newRecipe.publisher = [obj objectForKey:@"publisher"];
+                newRecipe.title = [obj objectForKey:@"title"];
+                [self.arrayOfRecipes addObject:newRecipe];
+            }
+            [self.delegate recipesLoadedSuccess];
+            NSLog(@"%@", responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"%@", error);
+        }];
+
+    }
+    else{
+        [self getAllRecipes];
     }
 }
 @end

@@ -30,6 +30,7 @@ const NSString static *pushRecipeInformationViewControllerSegue = @"PDPushRecipe
     self.appManger =  [PDAppManager sharedAppManager];
     self.appManger.delegate = self;
     [self.appManger getAllRecipes];
+    self.searchTextField.delegate = self;
 }
 
 
@@ -55,6 +56,17 @@ const NSString static *pushRecipeInformationViewControllerSegue = @"PDPushRecipe
     self.appManger.indexOfSelectedObject = indexPath.row;
     [self.appManger getRecipeAtIndex:indexPath.row];
 }
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.row == self.appManger.arrayOfRecipes.count-1) {
+        self.appManger.page ++;
+        if(self.appManger.isSearchMode == NO){
+            [self.appManger getAllRecipes];
+        }
+        else{
+            [self.appManger searchRecipesWithSerachKey:self.searchTextField.text];
+        }
+    }
+}
 
 #pragma mark - PDAppManagerDelegate methods
 - (void)recipesLoadedSuccess{
@@ -65,8 +77,29 @@ const NSString static *pushRecipeInformationViewControllerSegue = @"PDPushRecipe
     [self performSegueWithIdentifier:pushRecipeInformationViewControllerSegue sender:self];
 }
 
+#pragma mark - UITextFieldDelegate
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    self.appManger.page =1;
+    [self.appManger searchRecipesWithSerachKey:textField.text];
+    [self.view setAlpha:1.0];
+    self.searchTextField.hidden = YES;
+    return YES;
+}
+
 #pragma mark - IBAction methods
-- (IBAction)searchButtonPressed:(id)sender {
+- (IBAction)searchBarButtonPressed:(id)sender {
+    if(self.appManger.isSearchMode == NO){
+        self.searchBarButton.title = @"Skip";
+        self.searchTextField.hidden = NO;
+        [self.view setAlpha:0.5];
+    }
+    else{
+        [self.view setAlpha:1.0];
+        self.searchBarButton.title = @"Search";
+        self.searchTextField.hidden = YES;
+        self.appManger.page =1;
+        [self.appManger getAllRecipes];
+    }
 }
 
 @end

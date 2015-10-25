@@ -28,6 +28,7 @@ static NSString const *tableViewIngredientsCellIdentifier = @"PDTableViewIngredi
     self.appManager = [PDAppManager sharedAppManager];
     self.recipeImageView.image = self.appManager.selectedRecipe.recipeImage;
     self.navigationItem.title = self.appManager.selectedRecipe.title;
+    self.ingredientsTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
 }
 
 #pragma mark - UITableViewDataSource methods

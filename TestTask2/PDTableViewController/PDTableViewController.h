@@ -10,6 +10,6 @@
 #import <Foundation/Foundation.h>
 #import "PDAppManager.h"
 
-@interface PDTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, PDAppManagerDelegate>
+@interface PDTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, PDAppManagerDelegate, UITextFieldDelegate>
 
 @end
